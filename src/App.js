@@ -2,6 +2,7 @@ import React from 'react';
 import {useSpring, animated} from 'react-spring';
 import logo from './logo.svg';
 import './App.css';
+import Toggle  from './Toggle';
 
 const  App = () => {
   const fade = useSpring({
@@ -19,6 +20,9 @@ const  App = () => {
         <img src={logo} className="logo" alt="Logo" />
         <button className="menu-button">Menu</button>
       </header>
+      <main>
+        <Toggle />
+      </main>
     </animated.div>
   );
 }
