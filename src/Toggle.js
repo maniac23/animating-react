@@ -4,7 +4,10 @@ import {useSpring , animated} from 'react-spring';
 const Toggle = () => {
   const [isToggled, setToggle] = useState(false);
   const fade = useSpring({
-    opacity: isToggled ? 1 : 0
+    // opacity: isToggled ? 1 : 0,
+    // fontSize: isToggled  ? '2rem' : '4rem',
+    color: isToggled ? '#000' : '#bada55',
+    transform: isToggled  ? 'translate3d(0,0,0)' : 'translate3d(-50px,0,0)',
   });
 
   return (
@@ -14,5 +17,6 @@ const Toggle = () => {
     </div>
   );
 };
+ 
 
 export default Toggle;
