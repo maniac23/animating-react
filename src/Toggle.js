@@ -1,22 +1,28 @@
 import React, { useState } from 'react';
-import {useSpring , animated} from 'react-spring';
+import { useTransition, animated } from 'react-spring';
 
 const Toggle = () => {
   const [isToggled, setToggle] = useState(false);
-  const fade = useSpring({
-    // opacity: isToggled ? 1 : 0,
-    // fontSize: isToggled  ? '2rem' : '4rem',
-    color: isToggled ? '#000' : '#bada55',
-    transform: isToggled  ? 'translate3d(0,0,0)' : 'translate3d(-50px,0,0)',
+  const transition = useTransition(isToggled, null, {
+    from: { opacity: 0 },
+    enter: { opacity: 1 },
+    leave: { opacity: 0 }
   });
 
   return (
     <div>
-      <animated.h1 style={fade}>Hello</animated.h1>
+      {transition.map(
+        ({ item, key, props }) =>
+          item && (
+            <animated.h1 key={key} style={props}>
+              Hello
+            </animated.h1>
+          )
+      )}
+
       <button onClick={() => setToggle(!isToggled)}>Toggle</button>
     </div>
   );
 };
- 
 
 export default Toggle;

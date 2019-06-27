@@ -18,10 +18,10 @@ const App = () => {
   });
 
   return (
-    <animated.div className='App' style={fade}>
-      <header className='App-header'>
-        <img src={logo} className='logo' alt='Logo' />
-        <button onClick={() => setNavOpen(!isNavOpen)} className='menu-button'>
+    <animated.div className="App" style={fade}>
+      <header className="App-header">
+        <img src={logo} className="logo" alt="Logo" />
+        <button onClick={() => setNavOpen(!isNavOpen)} className="menu-button">
           Menu
         </button>
         {/* <Nav style={navAnimation} /> */}
