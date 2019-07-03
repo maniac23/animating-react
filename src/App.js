@@ -7,6 +7,7 @@ import './App.css';
 import Modal from './Modal';
 import Checkout from './Checkout';
 import Accordion from './Accordion';
+import Waypoints from './Waypoints';
 const App = () => {
   const [isNavOpen, setNavOpen] = useState(false);
 
@@ -31,6 +32,7 @@ const App = () => {
       <main>
         <Modal />
         <Accordion />
+        <Waypoints />
         {/* <Routes /> */}
       </main>
       <Checkout isOpen={isNavOpen} />
