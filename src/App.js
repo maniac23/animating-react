@@ -7,7 +7,8 @@ import './App.css';
 import Modal from './Modal';
 import Checkout from './Checkout';
 import Accordion from './Accordion';
-import Waypoints from './Waypoints';
+// import Waypoints from './Waypoints';
+import Gesture from './Gesture';
 const App = () => {
   const [isNavOpen, setNavOpen] = useState(false);
 
@@ -32,8 +33,9 @@ const App = () => {
       <main>
         <Modal />
         <Accordion />
-        <Waypoints />
+        {/* <Waypoints /> */}
         {/* <Routes /> */}
+        <Gesture />
       </main>
       <Checkout isOpen={isNavOpen} />
     </animated.div>
