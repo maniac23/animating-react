@@ -1,24 +1,17 @@
-import React from 'react';
-import { animated, useSprings } from 'react-spring';
+import React, { useState } from 'react';
+import { animated, useTrail } from 'react-spring';
 
-const Boxes = () => {
+const Boxes = ({ isToggled }) => {
+  const [on, toggled] = useState(false);
   const items = [0.5, 0.7, 0.9, 1, 0.1];
-  const springs = useSprings(
-    items.length,
-    items.map(item => ({
-      from: {
-        opacity: 0
-        // transform: 'translate3d(-50%, 0, 0)'
-      },
-      to: {
-        opacity: item
-        // transform: 'translate3d(0, 0, 0)'
-      }
-    }))
-  );
+  console.log(isToggled);
+  const trail = useTrail(items.length, {
+    transform: isToggled ? 'trasnlate3d(0, 0, 0)' : 'translate3d(-50%, 0, 0)',
+    opacity: isToggled ? 1 : 0
+  });
   return (
     <div className="boxes-grid">
-      {springs.map(animation => (
+      {trail.map(animation => (
         <animated.div style={animation} className="box" />
       ))}
     </div>
